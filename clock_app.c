@@ -297,6 +297,7 @@ int32_t clock_app(void* p) {
 
     notif = furi_record_open(RECORD_NOTIFICATION);
     float tmpBrightness = notif->settings.display_brightness;
+    set_backlight_brightness((float)(brightness / 100.f));
 
     notification_message(notif, &sequence_display_backlight_enforce_on);
     notification_message(notif, &led_off);
